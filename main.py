@@ -22,7 +22,15 @@ async def ping(ctx):
 
 
 @bot.command(description="returns a random number between two args if given", brief="*rng [from this] [to this]")
-async def rng(ctx, first='1', last='100'):
+async def rng(ctx, *rng_args):
+    if len(rng_args) != 2:
+        await ctx.send("Please enter 2 arguments.")
+        print(f"{ctx.author} executed rng (2 args not given)")
+        return
+
+    first = rng_args[0]
+    last = rng_args[1]
+
     if first >= last:
         await ctx.send("The second value has to be greater than the first value.")
         print(f"{ctx.author} executed rng (args error)")       
