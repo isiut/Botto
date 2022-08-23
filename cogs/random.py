@@ -5,8 +5,8 @@ class Random(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+   
     # something wrong with rng command
-
     @commands.command()
     async def rng(self, ctx, *rng_args):
         if len(rng_args) != 2:
@@ -20,6 +20,13 @@ class Random(commands.Cog):
             await ctx.send("The second value has to be greater than the first value.")
         else:
             await ctx.send(random.randint(int(first), int(last)))
+
+
+    @commands.command()
+    async def coinflip(self, ctx):
+        coin_choice = random.choice(["Heads", "Tails"])
+        await ctx.send(f"It's {coin_choice}!")
+
 
 
 def setup(client):
