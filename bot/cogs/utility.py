@@ -15,6 +15,7 @@ class Utility(commands.Cog):
             a = int(args[0])
             b = int(args[1])
             gpa = ((a*4)+(b*3))/(a+b)
+            gpa = round(gpa, 3)
 
             await ctx.send(f"Your GPA is {gpa}")
         except:
