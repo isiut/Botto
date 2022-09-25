@@ -2,8 +2,8 @@ from discord.ext import commands
 import random
 
 class Random(commands.Cog):
-    def __init__(self, client):
-        self.client = client
+    def __init__(self, bot):
+        self.bot = bot
 
    
     # something wrong with rng command
@@ -29,5 +29,5 @@ class Random(commands.Cog):
 
 
 
-async def setup(client):
-    await client.add_cog(Random(client))
+async def setup(bot):
+    await bot.add_cog(Random(bot))

@@ -2,8 +2,8 @@ from discord.ext import commands
 import random
 
 class Games(commands.Cog):
-    def __init__(self, client):
-        self.client = client
+    def __init__(self, bot):
+        self.bot = bot
 
 
     @commands.command()
@@ -41,5 +41,5 @@ class Games(commands.Cog):
 
 
 
-async def setup(client):
-    await client.add_cog(Games(client))
+async def setup(bot):
+    await bot.add_cog(Games(bot))
