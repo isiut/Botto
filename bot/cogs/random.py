@@ -29,5 +29,5 @@ class Random(commands.Cog):
 
 
 
-def setup(client):
-    client.add_cog(Random(client))
+async def setup(client):
+    await client.add_cog(Random(client))
